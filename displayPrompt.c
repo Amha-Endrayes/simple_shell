@@ -23,7 +23,5 @@ void printError(char *input, int counter, char **argv)
 	er = _itoa(counter);
 	PRINTER(er);
 	free(er);
-	//PRINTER(": ");
-	//PRINTER(input);
 	PRINTER(": No such file or directory\n");
 }

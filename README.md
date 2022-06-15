@@ -18,6 +18,8 @@ Solomon Enanaw
 
 About this project
 
+
+
 This project is a simple version of the linux shell made for  Alx software Engineering program in collaboration with Holberton School taking part of the "Low-level programming & Algorithm - Linux and Unix system programming" projects.
 
 It is created using the C programming Language and it can do many functionalities that a real shell does.
@@ -39,6 +41,9 @@ Handles The EOF (End Of File) condition.
 Handles the Ctrl + C signal -> It doesn't exit the shell
 
 Files description
+
+
+
 
 AUTHORS -> List of contributors to this repository
 
@@ -104,10 +109,15 @@ _unsetenv -> remove a global variable
 
 USAGE
 
+
+
+
+
+
 You can try our shell by following these steps:
 
 
-Step 1: Clone our repository using this command, (you need to have git installed on your machine first)
+Step 1: Clone our repository using this command on your vagrant machine.
 
 
 git clone https://github.com/Amha-Endrayes/simple_shell
@@ -120,9 +130,9 @@ cd simple_shell
 Step 3: Compile the C files in this way:
 
 
-gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh.
 
-Step 4: Run the shell
+Step 4: Run the shell.
 
 
 ./hsh

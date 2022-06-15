@@ -93,7 +93,7 @@ int print_echo(char **cmd);
 /** ####error handle and Printer ####*/
 void numberPrint(unsigned int n);
 void intigerPrint(int n);
-void print_error(char *line, int c, char **argv);
+void printError(char *line, int c, char **argv);
 void _prerror(char **argv, int c, char **cmd);
 
 

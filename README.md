@@ -94,6 +94,7 @@ _unsetenv -> remove a global variable
 
 
 USAGE
+
 You can try our shell by following these steps:
 
 
@@ -101,18 +102,22 @@ Step 1: Clone our repository using this command, (you need to have git installed
 
 
 git clone https://github.com/Amha-Endrayes/simple_shell
+
 Step 2: Change directory to simple_shell:
 
 
 cd simple_shell
+
 Step 3: Compile the C files in this way:
 
 
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+
 Step 4: Run the shell
 
 
 ./hsh
+
 Exiting the shell When you want to exit the shell, you can use one of the following methods:
 
 
@@ -120,4 +125,5 @@ Exiting the shell When you want to exit the shell, you can use one of the follow
 
 
 exit
+
 2: Press on Ctrl + D

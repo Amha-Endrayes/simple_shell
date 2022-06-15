@@ -1,110 +1,79 @@
 #include "main.h"
+#include <unistd.h>
 /**
- * _strcpy - Copie Source To Destination Char
- * @dest:Destination
- * @src:Source
- * Return: Copie Of Char *
- */
-char *_strcpy(char *dest, char *src)
-{
-int i;
-
-i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-dest[i] = '\0';
-return (dest);
-}
-/**
- * _strcat - Concat Two String
- * @dest:First String
- * @src:Second String
- * Return:First String + Second String Char *
- */
-char *_strcat(char *dest, char *src)
-{
-	char *s = dest;
-
-	while (*dest != '\0')
-	{
-		dest++;
-	}
-
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-	return (s);
-}
-/**
- * _strchr - Locate Charactere In String
- * @s:String Search In
- * @c:Char To Search For
- * Return: Pointer To Char*
- */
-char *_strchr(char *s, char c)
-{
-
-	do		{
-
-		if (*s == c)
-			{
-			break;
-			}
-		}	while (*s++);
-
-return (s);
-}
-/**
- * _strncmp - Compare Amount (n) Of Characters Of Two Strings.
- * @s1: A String.
- * @s2: A String.
- * @n: Amount Of Characters To Compare.
- *
- * Return: 1 If The Strings Don't Match Otherwise 0
- */
-int _strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t i;
-
-	if (s1 == NULL)
-		return (-1);
-	for (i = 0; i < n && s2[i]; i++)
-	{
-		if (s1[i] != s2[i])
-		{
-			return (1);
-		}
-	}
-	return (0);
-}
-/**
- * _strdup - Duplicate A String
- * @str:String
- * Return: Duplicate String Failed Null
+ * _strdup - returns a pointer to a newly allocated space in memory,
+ * which contains a copy of the string given as a parameter.
+ * @str: char type pointer to string
+ * Return: NULL if str is NULL, or insufficient memory available
+ * On success, returns a pointer to the duplicated string.
  */
 char *_strdup(char *str)
 {
-	size_t len, i;
-	char *str2;
+	char *dstr;
+	unsigned int size, i;
 
-	len = _strlen(str);
-	str2 = malloc(sizeof(char) * (len + 1));
-	if (!str2)
-	{
+	if (str == NULL)
+		return  (NULL);
+	for (size = 0; str[size] != '\0'; size++)
+		;
+	dstr  = malloc((size + 1) * sizeof(char));
+
+	if (dstr == NULL)
 		return (NULL);
-	}
-
-	for (i = 0; i <= len; i++)
+	for  (i = 0; i <  size; i++)
 	{
-		str2[i] = str[i];
+		dstr[i] = str[i];
 	}
+	dstr[size] = '\0';
+	return (dstr);
+}
+/**
+ * _strlen - returns the length of a string
+ * @s: char type string
+ * Return: string length
+ */
+int _strlen(char *s)
+{
+	int i = 0;
 
-	return (str2);
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+/**
+ * rev_string - reverses a string
+ * @s: char type pointer
+ */
+void rev_string(char *s)
+{
+	int i = 0, j, l = 0;
+	char k;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	i--;
+	j = i;
+	while (l <= j / 2)
+	{
+		k = s[l];
+		s[l] = s[i];
+		s[i] = k;
+		i--;
+		l++;
+	}
+}
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }

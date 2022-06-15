@@ -24,14 +24,6 @@ extern char **environ;
 #include <fcntl.h>
 #include <errno.h>
 #include <linux/limits.h>
-#include <stddef.h>
-#include <wait.h>
-#include <direct.h>
-
-
-
-
-
 
 /**###### STRING FUNCTION ######*/
 

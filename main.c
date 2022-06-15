@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - Simple Shell 
+ * main - Simple Shell
  * @argc: Argument Count
  * @argv:Argument Value
  * Return: Exit Value By Status
@@ -9,7 +9,7 @@
 
 int main(__attribute__((unused)) int argc, char **argv)
 {
- 	char *input, **cmd;
+	char *input, **cmd;
 	int counter = 0, statue = 1, st = 0;
 
 	if (argv[1] != NULL)

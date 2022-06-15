@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 /**
  * exit_command - Exit Statue Shell
  * @cmd: Parsed Command

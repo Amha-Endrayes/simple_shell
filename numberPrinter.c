@@ -1,24 +1,24 @@
 #include "shell.h"
 /**
- * print_number -Print Unsigned Int Putchar
+ * numberPrint -Print Unsigned Int Putchar
  * @n: Unisigned Integer
  * Return: Void
  */
-void print_number(unsigned int n)
+void numberPrint(unsigned int n)
 {
 	unsigned int x = n;
 
 	if ((x / 10) > 0)
-		print_number(x / 10);
+		numberPrint(x / 10);
 
 	_putchar(x % 10 + '0');
 }
 /**
- * print_number_in -Print Number Putchar
+ * intigerPrint -Print Number Putchar
  * @n:Integer
  * Return: void
  */
-void print_number_in(int n)
+void intigerPrint(int n)
 {
 	unsigned int x = n;
 
@@ -28,7 +28,7 @@ void print_number_in(int n)
 		x = -x;
 	}
 	if ((x / 10) > 0)
-		print_number(x / 10);
+		numberPrint(x / 10);
 
 	_putchar(x % 10 + '0');
 }

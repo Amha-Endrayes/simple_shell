@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * parse_cmd - Parse Line Of Input
+ * parseInput - Parse Line Of Input
  * @input:User Input To Parse
  * Return: Array Of Char (Parsed):Simple Shell
  */
-char **parse_cmd(char *input)
+char **parseInput(char *input)
 {
 	char **tokens;
 	char *token;
@@ -16,7 +16,7 @@ char **parse_cmd(char *input)
 	tokens = malloc(sizeof(char *) * buffsize);
 	if (!tokens)
 	{
-		perror("hsh");
+		perror("sh");
 		return (NULL);
 	}
 

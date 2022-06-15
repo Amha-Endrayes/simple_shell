@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * path_cmd -  Search In $PATH For Excutable Command
+ * path_command -  Search In $PATH For Excutable Command
  * @cmd: Parsed Input
  * Return: 1  Failure  0  Success.
  */
-int path_cmd(char **cmd)
+int path_command(char **cmd)
 {
 	char *path, *value, *cmd_path;
 	struct stat buf;
@@ -63,17 +63,17 @@ char *build(char *token, char *value)
  */
 char *_getenv(char *name)
 {
-	size_t nl, vl;
+	size_t nLength, vLength;
 	char *value;
 	int i, x, j;
 
-	nl = _strlen(name);
+	nLength = _strlen(name);
 	for (i = 0 ; environ[i]; i++)
 	{
-		if (_strncmp(name, environ[i], nl) == 0)
+		if (_strncmp(name, environ[i], nLength) == 0)
 		{
-			vl = _strlen(environ[i]) - nl;
-			value = malloc(sizeof(char) * vl);
+			vLength = _strlen(environ[i]) - nLength;
+			value = malloc(sizeof(char) * vLength);
 			if (!value)
 			{
 				free(value);
@@ -82,7 +82,7 @@ char *_getenv(char *name)
 			}
 
 			j = 0;
-			for (x = nl + 1; environ[i][x]; x++, j++)
+			for (x = nLength + 1; environ[i][x]; x++, j++)
 			{
 				value[j] = environ[i][x];
 			}

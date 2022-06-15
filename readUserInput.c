@@ -9,11 +9,11 @@ char *_getline()
 {
 int i, buffsize = BUFSIZE, rd;
 char c = 0;
-char *buff = malloc(buffsize);
+char *_buffer = malloc(buffsize);
 
-	if (buff == NULL)
+	if (_buffer == NULL)
 	{
-		free(buff);
+		free(_buffer);
 		return (NULL);
 	}
 
@@ -23,43 +23,43 @@ char *buff = malloc(buffsize);
 		rd = read(STDIN_FILENO, &c, 1);
 		if (rd == 0)
 		{
-			free(buff);
+			free(_buffer);
 			exit(EXIT_SUCCESS);
 		}
-		buff[i] = c;
-		if (buff[0] == '\n')
+		_buffer[i] = c;
+		if (_buffer[0] == '\n')
 		{
-			free(buff);
+			free(_buffer);
 			return ("\0");
 		}
 		if (i >= buffsize)
 		{
-			buff = _realloc(buff, buffsize, buffsize + 1);
-			if (buff == NULL)
+			_buffer = _realloc(_buffer, buffsize, buffsize + 1);
+			if (_buffer == NULL)
 			{
 				return (NULL);
 			}
 		}
 	}
-	buff[i] = '\0';
-	hashtag_handle(buff);
-	return (buff);
+	_buffer[i] = '\0';
+	removeComments(_buffer);
+	return (_buffer);
 }
 
 /**
- * hashtag_handle - remove everything after #
- * @buff: input;
+ * removeComments - remove everything after #
+ * @_buffer: input;
  * Return:void
  */
-void hashtag_handle(char *buff)
+void removeComments(char *_buffer)
 {
 	int i;
 
-		for (i = 0; buff[i] != '\0'; i++)
+		for (i = 0; _buffer[i] != '\0'; i++)
 		{
-			if (buff[i] == '#')
+			if (_buffer[i] == '#')
 			{
-			buff[i] = '\0';
+			_buffer[i] = '\0';
 			break;
 			}
 	}

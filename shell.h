@@ -60,39 +60,39 @@ void free_all(char **input, char *line);
 
 /**###### INPUT Function ######*/
 
-void prompt(void);
+void displayShellTerminal(void);
 void signal_to_handel(int sig);
 char *_getline(void);
 
 /** ###### Command parser and extractor ###*/
 
-int path_cmd(char **line);
+int path_command(char **line);
 char *_getenv(char *name);
-char **parse_cmd(char *cmd);
+char **parseInput(char *cmd);
 int handle_builtin(char **cmd, int er);
 void read_file(char *filename, char **argv);
 char *build(char *token, char *value);
 int check_builtin(char **cmd);
-void creat_envi(char **envi);
+void creareEnviromentVariabel(char **envi);
 int check_cmd(char **tokens, char *line, int count, char **argv);
 void treat_file(char *line, int counter, FILE *fd, char **argv);
-void exit_bul_for_file(char **cmd, char *line, FILE *fd);
+void exit_command_for_file(char **cmd, char *line, FILE *fd);
 
 /** ####BUL FUNC #####*/
 
-void hashtag_handle(char *buff);
+void removeComments(char *_buffer);
 int history(char *input);
-int history_dis(char **cmd, int er);
-int dis_env(char **cmd, int er);
-int change_dir(char **cmd, int er);
+int display_history(char **cmd, int er);
+int env_Command(char **cmd, int er);
+int CD_Command(char **cmd, int er);
 int display_help(char **cmd, int er);
-int echo_bul(char **cmd, int er);
-void  exit_bul(char **cmd, char *input, char **argv, int c);
+int echo_Command(char **cmd, int er);
+void  exit_command(char **cmd, char *input, char **argv, int c);
 int print_echo(char **cmd);
 
 /** ####error handle and Printer ####*/
-void print_number(unsigned int n);
-void print_number_in(int n);
+void numberPrint(unsigned int n);
+void intigerPrint(int n);
 void print_error(char *line, int c, char **argv);
 void _prerror(char **argv, int c, char **cmd);
 
@@ -107,6 +107,6 @@ typedef struct  bulltin
 {
 	char *command;
 	int (*fun)(char **line, int er);
-} bul_t;
+} command_list;
 
 #endif

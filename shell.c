@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * main - Simple Shell (Hsh)
+ * main - Simple Shell 
  * @argc: Argument Count
  * @argv:Argument Value
  * Return: Exit Value By Status
@@ -9,7 +9,7 @@
 
 int main(__attribute__((unused)) int argc, char **argv)
 {
-	char *input, **cmd;
+ 	char *input, **cmd;
 	int counter = 0, statue = 1, st = 0;
 
 	if (argv[1] != NULL)
@@ -19,17 +19,17 @@ int main(__attribute__((unused)) int argc, char **argv)
 	{
 		counter++;
 		if (isatty(STDIN_FILENO))
-			prompt();
+			displayShellTerminal();
 		input = _getline();
 		if (input[0] == '\0')
 		{
 			continue;
 		}
 		history(input);
-		cmd = parse_cmd(input);
+		cmd = parseInput(input);
 		if (_strcmp(cmd[0], "exit") == 0)
 		{
-			exit_bul(cmd, input, argv, counter);
+			exit_command(cmd, input, argv, counter);
 		}
 		else if (check_builtin(cmd) == 0)
 		{
@@ -54,7 +54,7 @@ int main(__attribute__((unused)) int argc, char **argv)
  */
 int check_builtin(char **cmd)
 {
-	bul_t fun[] = {
+	command_list fun[] = {
 		{"cd", NULL},
 		{"help", NULL},
 		{"echo", NULL},
@@ -76,11 +76,11 @@ int check_builtin(char **cmd)
 	return (-1);
 }
 /**
- * creat_envi - Creat Array of Enviroment Variable
+ * creareEnviromentVariabel - Creat Array of Enviroment Variable
  * @envi: Array of Enviroment Variable
  * Return: Void
  */
-void creat_envi(char **envi)
+void creareEnviromentVariabel(char **envi)
 {
 	int i;
 

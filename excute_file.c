@@ -42,11 +42,11 @@ void treat_file(char *line, int counter, FILE *fp, char **argv)
 	char **cmd;
 	int st = 0;
 
-	cmd = parse_cmd(line);
+	cmd = parseInput(line);
 
 		if (_strncmp(cmd[0], "exit", 4) == 0)
 		{
-			exit_bul_for_file(cmd, line, fp);
+			exit_command_for_file(cmd, line, fp);
 		}
 		else if (check_builtin(cmd) == 0)
 		{
@@ -60,13 +60,13 @@ void treat_file(char *line, int counter, FILE *fp, char **argv)
 		}
 }
 /**
- * exit_bul_for_file - Exit Shell Case Of File
+ * exit_command_for_file - Exit Shell Case Of File
  * @line: Line From A File
  * @cmd: Parsed Command
  * @fd:File Descriptor
  * Return : Case Of Exit in A File Line
  */
-void exit_bul_for_file(char **cmd, char *line, FILE *fd)
+void exit_command_for_file(char **cmd, char *line, FILE *fd)
 {
 	int statue, i = 0;
 

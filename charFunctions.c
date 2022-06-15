@@ -26,13 +26,13 @@ int i;
 i = 0;
 	while (i < n && *(src + i))
 	{
-	*(dest + i) = *(src + i);
-	i++;
+		*(dest + i) = *(src + i);
+		i++;
 	}
 	while (i < n)
 	{
-	*(dest + i) = '\0';
-	i++;
+		*(dest + i) = '\0';
+		i++;
 	}
 	return (dest);
 }
@@ -51,7 +51,7 @@ int _strlen(char *s)
 		{
 			continue;
 		}
-return (i);
+	return (i);
 }
 
 /**

@@ -1,26 +1,26 @@
 #include "shell.h"
 
 /**
- * _strcmp - Compare Two String
- * @s1:String 1
- * @s2:String 2
- * Return: 0 If Identical Otherwise How Much Diffrent
+ * _strcmp - Compares Two Strings
+ * @stringA:String 1
+ * @stringB:String 2
+ * Return: 0 If Identical result if diffrent
  */
-int _strcmp(char *s1, char *s2)
+int _strcmp(char *stringA, char *stringB)
 {
 int cmp = 0, i, len1, len2;
-len1 = _strlen(s1);
-len2 = _strlen(s2);
+len1 = _strlen(stringA);
+len2 = _strlen(stringB);
 
-	if (s1 == NULL || s2 == NULL)
+	if (stringA == NULL || stringB == NULL)
 		return (1);
 	if (len1 != len2)
 		return (1);
-	for (i = 0; s1[i]; i++)
+	for (i = 0; stringA[i]; i++)
 	{
-		if (s1[i] != s2[i])
+		if (stringA[i] != stringB[i])
 		{
-			cmp = s1[i] - s2[i];
+			cmp = stringA[i] - stringB[i];
 			break;
 		}
 		else
@@ -35,14 +35,14 @@ len2 = _strlen(s2);
  */
 int _isalpha(int c)
 {
-if (((c >= 97) && (c <= 122)) || ((c >= 65) && (c <= 90)))
-{
-return (1);
-}
-else
-{
-return (0);
-}
+	if (((c >= 97) && (c <= 122)) || ((c >= 65) && (c <= 90)))
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
 /**
  * _itoa - Convert Integer To Char

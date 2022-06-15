@@ -1,4 +1,6 @@
-Welcome to  0x16. C - Simple Shell Program
+Welcome to  Simple Shell Program
+
+A simple Unix command line interpreter
 
 
 

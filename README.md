@@ -4,7 +4,6 @@ Welcome to  0x16. C - Simple Shell Program
 
 
 
-
 Authors
 
 Amha-Endrayes
@@ -41,6 +40,7 @@ Handles The EOF (End Of File) condition.
 Handles the Ctrl + C signal -> It doesn't exit the shell
 
 Files description
+
 
 
 

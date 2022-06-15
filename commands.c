@@ -69,12 +69,12 @@ int CD_Command(char **cmd, __attribute__((unused))int er)
 	return (0);
 }
 /**
- * env_Command - Display Enviroment Variable
+ * env_cmd - Display Enviroment Variable
  * @cmd:Parsed Command
  * @er:Statue of Last command Excuted
  * Return:Always 0
  */
-int env_Command(__attribute__((unused)) char **cmd, __attribute__((unused)) int er)
+int env_cmd(__attribute__((unused)) char **cmd, __attribute__((unused)) int er)
 {
 size_t i;
 	int len;

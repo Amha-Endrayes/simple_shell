@@ -11,10 +11,10 @@ int handle_builtin(char **cmd, int er)
 {
 	 command_list bil[] = {
 		{"cd", CD_Command},
-		{"env", env_Command},
+		{"env", env_cmd},
 		{"help", display_help},
 		{"echo", echo_Command},
-		{"history", display_history},
+		{"history", showHistory},
 		{NULL, NULL}
 	};
 	int i = 0;

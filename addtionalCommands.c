@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * display_history - Display History Of User Input Simple Shell
+ * showHistory - Display History Of User Input Simple Shell
  * @c:Parsed Command
  * @s:Statue Of Last Excute
  * Return: 0 Succes -1 Fail
  */
-int display_history(__attribute__((unused))char **c, __attribute__((unused))int s)
+int showHistory(__attribute__((unused))char **c, __attribute__((unused))int s)
 {
 	char *filename = ".simple_shell_history";
 	FILE *fp;

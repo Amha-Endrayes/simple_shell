@@ -82,8 +82,8 @@ void exit_command_for_file(char **cmd, char *line, FILE *fd);
 
 void removeComments(char *_buffer);
 int history(char *input);
-int display_history(char **cmd, int er);
-int env_Command(char **cmd, int er);
+int showHistory(char **cmd, int er);
+int env_cmd(char **cmd, int er);
 int CD_Command(char **cmd, int er);
 int display_help(char **cmd, int er);
 int echo_Command(char **cmd, int er);

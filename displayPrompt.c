@@ -5,7 +5,7 @@
  */
 void displayShellTerminal(void)
 {
-	PRINTER("#cisfun$ ");
+	PRINTER("$ ");
 }
 /**
  * printError - Display Error Based on Command and How Many Time Shell Looped
@@ -23,5 +23,7 @@ void printError(char *input, int counter, char **argv)
 	er = _itoa(counter);
 	PRINTER(er);
 	free(er);
-	PRINTER(": No such file or directory\n");
+	PRINTER(": ");
+	PRINTER(input);
+	PRINTER(": not found\n");
 }

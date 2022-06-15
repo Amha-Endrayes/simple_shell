@@ -5,7 +5,7 @@
  */
 void displayShellTerminal(void)
 {
-	PRINTER("$ ");
+	PRINTER("#cisfun$ ");
 }
 /**
  * printError - Display Error Based on Command and How Many Time Shell Looped

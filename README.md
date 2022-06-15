@@ -4,8 +4,6 @@ A simple Unix command line interpreter
 
 
 
-
-
 Authors
 
 Amha-Endrayes
@@ -40,6 +38,7 @@ Handles the PATH global variable.
 Handles The EOF (End Of File) condition.
 
 Handles the Ctrl + C signal -> It doesn't exit the shell
+
 
 Files description
 

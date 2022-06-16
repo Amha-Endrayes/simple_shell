@@ -6,21 +6,21 @@
  * @stringB:String 2
  * Return: 0 If Identical result if diffrent
  */
-int _strcmp(char *stringA, char *stringB)
+int _strcmp(char *s1, char *s2)
 {
 int cmp = 0, i, len1, len2;
-len1 = _strlen(stringA);
-len2 = _strlen(stringB);
+len1 = _strlen(s1);
+len2 = _strlen(s2);
 
-	if (stringA == NULL || stringB == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (1);
 	if (len1 != len2)
 		return (1);
 	for (i = 0; stringA[i]; i++)
 	{
-		if (stringA[i] != stringB[i])
+		if (s1[i] != s2[i])
 		{
-			cmp = stringA[i] - stringB[i];
+			cmp = s1[i] - s2[i];
 			break;
 		}
 		else

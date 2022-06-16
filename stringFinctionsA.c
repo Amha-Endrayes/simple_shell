@@ -16,7 +16,7 @@ len2 = _strlen(s2);
 		return (1);
 	if (len1 != len2)
 		return (1);
-	for (i = 0; stringA[i]; i++)
+	for (i = 0; s1[i]; i++)
 	{
 		if (s1[i] != s2[i])
 		{

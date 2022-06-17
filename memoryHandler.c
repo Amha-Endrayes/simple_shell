@@ -52,14 +52,14 @@ void free_all(char **cmd, char *line)
  * _memcpy - Copy Byte From Source To Destination
  * @dest: Destination Pointer
  * @src: Source Pointer
- * @n: Size (How Much You Will Copy)
+ * @size: How much of the source you want to copy
  *Return: Void Pointer
  */
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_memcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int i;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i < size; i++)
 	{
 		dest[i] = src[i];
 	}

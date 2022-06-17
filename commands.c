@@ -47,10 +47,10 @@ int CD_Command(char **cmd, __attribute__((unused))int er)
 	char cwd[PATH_MAX];
 
 	if (cmd[1] == NULL)
-		value = chdir(getenv("HOME"));
+		value = chdir(_getenv("HOME"));
 	else if (_strcmp(cmd[1], "-") == 0)
 	{
-		value = chdir(getenv("OLDPWD"));
+		value = chdir(_getenv("OLDPWD"));
 	}
 	else
 		value = chdir(cmd[1]);

@@ -2,8 +2,8 @@
 
 /**
  * _strcmp - Compares Two Strings
- * @stringA:String 1
- * @stringB:String 2
+ * @s1:String 1
+ * @s2:String 2
  * Return: 0 If Identical result if diffrent
  */
 int _strcmp(char *s1, char *s2)
